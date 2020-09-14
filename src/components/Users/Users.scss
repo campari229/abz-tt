@@ -1,0 +1,49 @@
+@import "../../helpers/fonts.scss";
+
+.users {
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+  
+    list-style: none;
+    padding: 0;
+  }
+
+  &__card {
+    overflow: hidden;
+  }
+
+  &__title {
+    text-align: center;
+
+    font-family: "Open Sans", sans-serif;
+    font-size: 40px;
+    line-height: 44px;
+    font-weight: 400;
+
+    margin: 0;
+  }
+
+  &__semi-title {
+    text-align: center;
+
+    font-family: "Open Sans", sans-serif;
+
+    color: gray;
+  }
+
+  &__btn {
+    display: block;
+    margin: 0 auto;
+    
+    font-size: 16px;
+
+    padding: 10px 61px;
+
+    border-radius: 5px;
+    background-color: #ef5b4c;
+    color: #fff;
+    border: none;
+  }
+}
