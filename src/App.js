@@ -5,6 +5,7 @@ import { Header } from './components/Header/Header';
 import { HeaderInfo } from './components/HeadInfo/HeadInfo';
 import { Acquaintance } from './components/Acquaintance/Acquaintance';
 import { Users } from './components/Users/Users';
+import { Registration } from './components/Registration/Registration';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <HeaderInfo />
       <Acquaintance />
       <Users />
+      <Registration />
     </div>
   );
 }
