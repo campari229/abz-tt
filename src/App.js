@@ -6,6 +6,8 @@ import { HeaderInfo } from './components/HeadInfo/HeadInfo';
 import { Acquaintance } from './components/Acquaintance/Acquaintance';
 import { Users } from './components/Users/Users';
 import { Registration } from './components/Registration/Registration';
+import { Footer } from './components/Footer/Footter';
+import { MobileNavigation } from './components/MobileNavigation/MobileNavigation';
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
       <Acquaintance />
       <Users />
       <Registration />
+      <Footer />
+      <MobileNavigation />
     </div>
   );
 }

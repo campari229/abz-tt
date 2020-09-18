@@ -1,8 +1,13 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+
+import { navigationToggler } from '../../store/store';
 
 import './Header.scss';
 
 export const Header = () => {
+  const dispatch = useDispatch()
+
   return (
     <section className="header" id="header">
       <div className="header__logo">
@@ -27,6 +32,7 @@ export const Header = () => {
           </li>
         </ul>
       </div>
+      <button className="header__burger-menu" onClick={() => dispatch(navigationToggler())}>shown</button>
     </section>
   )
 }

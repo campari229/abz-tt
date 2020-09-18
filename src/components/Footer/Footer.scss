@@ -1,0 +1,9 @@
+@import "../../helpers/fonts.scss";
+
+.footer {
+  border-top: 0.5px solid gray;
+
+  &__text {
+    text-align: center;
+  }
+}

@@ -13,21 +13,21 @@ export const Registration = () => {
   const [emailInputIsValid, setEmailInputIsValid] = useState(true);
   const [phoneInputValue, setPhoneInputValue] = useState('');
   const [phoneInputIsValid, setPhoneInputIsValid] = useState(true);
-  const [positionInputValue, setPositionInputValue] = useState('')
+  const [positionInputValue, setPositionInputValue] = useState('');
   const [positionInputIsValid, setPositionInputIsValid] = useState(true);
-  const [photoInputValue, setPhotoInputValue] = useState(undefined)
+  const [photoInputValue, setPhotoInputValue] = useState(undefined);
   const [photoInputIsValid, setPhotoInputIsValid] = useState(true);
   const [positions, setPositions] = useState([]);
-  const dispatch = useDispatch()
-
+  const [registrationMessage, setRegistrationMessage] = useState('')
+  const dispatch = useDispatch();
 
   useEffect(() => {
     async function getData() {
       setPositions(await getPositions())
-    }
+    };
 
     getData()
-  }, [])
+  }, []);
 
   const nameIsValid = () => {
     if (nameInputValue.length >= 2) {
@@ -37,7 +37,7 @@ export const Registration = () => {
       setNameInputIsValid(false)
       return false;
     }
-  }
+  };
 
   const emailIsValid = () => {
     const pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -49,7 +49,7 @@ export const Registration = () => {
       setEmailInputIsValid(false);
       return false;
     }
-  }
+  };
 
   const phoneIsValid = () => {
     const pattern = /^\+?3?8?(0\d{9})$/
@@ -61,7 +61,7 @@ export const Registration = () => {
       setPhoneInputIsValid(false);
       return false;
     }
-  }
+  };
 
   const positionIsValid = () => {
     if (positionInputValue) {
@@ -71,7 +71,7 @@ export const Registration = () => {
       setPositionInputIsValid(false)
       return false;
     }
-  }
+  };
 
   const photoIsValid = () => {
     if (photoInputValue) {
@@ -86,7 +86,7 @@ export const Registration = () => {
       setPhotoInputIsValid(false)
       return false;
     }
-  }
+  };
 
   const submit = async (e) => {
     e.preventDefault()
@@ -100,111 +100,124 @@ export const Registration = () => {
       formData.append('photo', photoInputValue);
 
       const result = await sendFormData(formData);
-      dispatch(setUsers((await loadUsers(6)).users))
+      setRegistrationMessage(result.message);
       if (result.success) {
+        dispatch(setUsers((await loadUsers(6)).users))
         document.querySelector(".registration__form").reset();
       }
     }
-  }
+  };
 
   const setPosition = (e) => {
    
     if (e.target.tagName === 'INPUT') {
       setPositionInputValue(e.target.parentElement.innerText)
     }
-  }
-
-  const x = () => {
-    // const file = document.querySelector('input[type="file"]')
-    // console.log(file.files[0])
-    console.log(positions.find(position => position.name === positionInputValue).id)
-  }
-
+  };
 
   return (
-    <section className="registration">
-      <h3 className="registration__title">Register to get a work</h3>
-      <h4 className="registration__semi-title">
-        Attention! After successful registration and alert, update the
-        liat of users in the block from the top
-      </h4>
-      <form className="registration__form">
-        <label className="registration__text">Name</label>
-        <input
-          className={nameInputIsValid ? "registration__input" : "registration__input registration__input--error"}
-          type="text"
-          placeholder="Your name"
-          maxLength={60}
-          name="name"
-          onChange={(e) => { setNameInputValue(e.target.value) }}
-        />
-        <p
-          className="registration__error-message"
-          style={nameInputIsValid ? { opacity: 0 } : { opacity: 1 }}
-        >
-          Enter valid name
-        </p>
-        <label className="registration__text">Email</label>
-        <input
-          className={emailInputIsValid ? "registration__input" : "registration__input registration__input--error"}
-          type="text"
-          placeholder="Your email"
-          onChange={(e) => { setEmailInputValue(e.target.value) }}
-        />
-        <p
-          className="registration__error-message"
-          style={emailInputIsValid ? { opacity: 0 } : { opacity: 1 }}
-        >
-          Enter valid Email
-        </p>
-        <label className="registration__text">Phone number</label>
-        <input
-          className={phoneInputIsValid ? "registration__input" : "registration__input registration__input--error"}
-          type="text"
-          placeholder="+380 XX XXX XX XX"
-          onChange={(e) => { setPhoneInputValue(e.target.value) }}
-        />
-        <p
-          className="registration__error-message"
-          style={phoneInputIsValid ? { opacity: 0 } : { opacity: 1 }}
-        >
-          Enter valid phone number
-        </p>
-        <div className="registration__select" onChange={setPosition}>
-          <p className="registration__text">Select our position</p>
-          {positions.map(position => (
-            <label className="registration__text" key={position.id}>
-              <input name="position" type="radio"/>
-            {position.name}
-            </label>
-          ))}
+    <section className="registration" id="registration">
+      <div className="registration__content">
+        <h3 className="registration__title">Register to get a work</h3>
+        <h4 className="registration__semi-title">
+          Attention! After successful registration and alert, update the
+          liat of users in the block from the top
+        </h4>
+        <form className="registration__form">
+          <label className="registration__text">Name</label>
+          <input
+            className={nameInputIsValid ? "registration__input" : "registration__input registration__input--error"}
+            type="text"
+            placeholder="Your name"
+            maxLength={60}
+            name="name"
+            onChange={(e) => { setNameInputValue(e.target.value) }}
+          />
           <p
             className="registration__error-message"
-            style={positionInputIsValid ? { opacity: 0 } : { opacity: 1 }}
+            style={nameInputIsValid ? { opacity: 0 } : { opacity: 1 }}
           >
-          Please choose your position
+            Please enter your name
           </p>
-        </div>
-        <label className="registration__text">Photo</label>
-        <div className="registration__photo-wrapper">
-        <input type="file" className="registration__photo" onChange={(e) => setPhotoInputValue(e.target.files[0])} />
-        <div className={photoInputIsValid ? "registration__fake-input-wrapper" : "registration__fake-input-wrapper--error"}>
+          <label className="registration__text">Email</label>
           <input
-            className="registration__fake-input"
-            placeholder={photoInputValue ? photoInputValue.name : "Upload your photo"}
+            className={emailInputIsValid ? "registration__input" : "registration__input registration__input--error"}
+            type="text"
+            placeholder="Your email"
+            onChange={(e) => { setEmailInputValue(e.target.value) }}
           />
-          <button className="registration__fake-button">Brouse</button>
-        </div>
-        <p
-          className="registration__error-message"
-          style={photoInputIsValid ? { opacity: 0 } : { opacity: 1 }}
-        >
-        The photo format must be jpeg/jpg type. The photo size must not be greater than 5 Mb.
-        </p>
-        </div>
-        <button type='submit' className="registration__btn" onClick={submit}>Sing up now</button>
-        <button type="button" onClick={x}>fuck</button>
-      </form> 
+          <p
+            className="registration__error-message"
+            style={emailInputIsValid ? { opacity: 0 } : { opacity: 1 }}
+          >
+            Enter valid Email
+          </p>
+          <label className="registration__text">Phone number</label>
+          <input
+            className={phoneInputIsValid ? "registration__input" : "registration__input registration__input--error"}
+            type="text"
+            placeholder="+380 XX XXX XX XX"
+            onChange={(e) => { setPhoneInputValue(e.target.value) }}
+          />
+          <p
+            className="registration__error-message"
+            style={phoneInputIsValid ? { opacity: 0 } : { opacity: 1 }}
+          >
+            Enter valid phone number
+          </p>
+          <div className="registration__select" onChange={setPosition}>
+            <p className="registration__text">Select our position</p>
+            {positions.map(position => (
+              <label className="registration__text" key={position.id}>
+                <input name="position" type="radio"/>
+              {position.name}
+              </label>
+            ))}
+            <p
+              className="registration__error-message"
+              style={positionInputIsValid ? { opacity: 0 } : { opacity: 1 }}
+            >
+            Please choose your position
+            </p>
+          </div>
+          <label className="registration__text">Photo</label>
+          <div className="registration__photo-wrapper">
+          <input type="file" className="registration__photo" onChange={(e) => setPhotoInputValue(e.target.files[0])} />
+          <div className={photoInputIsValid ? "registration__fake-input-wrapper" : "registration__fake-input-wrapper--error"}>
+            <input
+              className="registration__fake-input"
+              placeholder={photoInputValue ? photoInputValue.name : "Upload your photo"}
+            />
+            <button className="registration__fake-button">Browse</button>
+          </div>
+          <p
+            className="registration__error-message"
+            style={photoInputIsValid ? { opacity: 0 } : { opacity: 1 }}
+          >
+          The photo format must be jpeg/jpg type. The photo size must not be greater than 5 Mb.
+          </p>
+          </div>
+          <button type='submit' className="registration__btn" onClick={submit}>Sing up now</button>
+        </form>
+        {
+          registrationMessage.length
+          ? (
+            <div className="registration__message">
+              <div className="message">
+                <div className="message__header">
+                  <h3 className="message__title">
+                    {registrationMessage === "New user successfully registered" ? 'Congratulation' : 'Error'}
+                  </h3>
+                  <button className="message__header-button">X</button>
+                </div>
+                <div className="message__body">{registrationMessage}</div>
+                <button onClick={() => setRegistrationMessage('')} className="message__btn">Great</button>
+              </div>
+            </div>
+          )
+          : <></>
+        }
+      </div>
     </section>
   )
 }

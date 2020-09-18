@@ -1,0 +1,34 @@
+.mobile-navigation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  transition: transform 0.5s;
+
+  &__list {
+    width: 300px;
+    list-style: none;
+    padding: 50px 0;
+
+    background-color: #fff;
+    transform: translateY(-16px);
+  }
+
+  &__item {
+    margin: 15px 0;
+    padding: 0 10px;
+  }
+
+  &__section {
+    border-top: 1px solid gray;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: bold;
+  }
+}

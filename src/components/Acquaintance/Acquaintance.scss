@@ -2,15 +2,18 @@
 
 .acquaintance {
   width: 90vw;
-  margin: 0 auto;
+  margin: 0 auto 150px;
 
   &__title {
     text-align: center;
 
     font-family: "Open Sans", sans-serif;
-    font-size: 40px;
-    line-height: 44px;
+    font-size: 50px;
+    line-height: 54px;
     font-weight: 400;
+
+    margin: 135px 0 30px;
+
   }
 
   &__main {
@@ -19,21 +22,26 @@
   }
 
   &__img {
-    width: 30%;
+    width: 35%;
   }
 
   &__info {
     width: 60%;
+    padding-right: 5px;
+    box-sizing: border-box;
   }
 
   &__info-title {
+    margin: 26px 0 15px;
     font-family: "Open Sans", sans-serif;
     font-size: 24px;
     line-height: 29px;
     font-weight: 400;
   }
 
-  &__text{
+  &__text {
+    margin-top: 0;
+
     font-family: "Open Sans", sans-serif;
     font-size: 16px;
     line-height: 24px;

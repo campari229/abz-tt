@@ -2,11 +2,13 @@
 
 
 .header-info {
-  background: url(../../img/banner-photo.jpg);
-  background-size: 100%;
+  background: url(../../img/banner-photo.jpg) center no-repeat;
+  background-size: 115%;
 
   font-family: "Open Sans", sans-serif;
   padding: 30px;
+
+  margin-bottom: 100px;
 
   &__title {
     width: 55vw;
