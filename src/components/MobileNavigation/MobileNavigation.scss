@@ -1,15 +1,16 @@
 .mobile-navigation {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 4;
 
-  transition: transform 0.5s;
+  // transition: transform 0.5s;
 
   &__list {
     width: 300px;
     list-style: none;
-    padding: 50px 0;
+    padding: 0 0 10px 0;
 
     background-color: #fff;
     transform: translateY(-16px);
@@ -30,5 +31,14 @@
     font-size: 16px;
     line-height: 24px;
     font-weight: bold;
+    transition: color 0.5s;
+  }
+
+  &__link:hover {
+    color: #ef5b4c;
+  }
+
+  &__link:active {
+    color: #007bff
   }
 }

@@ -4,7 +4,7 @@ const SET_USERS = 'SET_USERS';
 const SHOWN_NAVIGATION = 'SHOWN_NAVIGATION';
 
 export const setUsers = (users) => ({type: SET_USERS, users: users})
-export const navigationToggler = () => ({type: SHOWN_NAVIGATION})
+export const navigationToggler = (changeTo) => ({type: SHOWN_NAVIGATION, changeTo})
 
 export const getUsers = (state) => state.users;
 export const isNavigationShown = (state) => state.mobileNavigation;
@@ -24,7 +24,7 @@ const reducer = (state = initialState, action) => {
     case 'SHOWN_NAVIGATION':
       return {
         ...state,
-        mobileNavigation: !state.mobileNavigation,
+        mobileNavigation: action.changeTo,
       }
     default:
       return state

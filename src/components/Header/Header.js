@@ -32,7 +32,9 @@ export const Header = () => {
           </li>
         </ul>
       </div>
-      <button className="header__burger-menu" onClick={() => dispatch(navigationToggler())}>shown</button>
+      <button className="header__burger-menu" onClick={() => dispatch(navigationToggler(true))}>
+        <img src='/images/menu icon.svg' alt="burger" />
+      </button>
     </section>
   )
 }

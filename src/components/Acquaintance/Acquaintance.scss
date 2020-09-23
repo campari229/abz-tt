@@ -4,6 +4,10 @@
   width: 90vw;
   margin: 0 auto 150px;
 
+  @media (max-width: 950px) {
+    margin-bottom: 100px;
+  }
+
   &__title {
     text-align: center;
 
@@ -14,21 +18,46 @@
 
     margin: 135px 0 30px;
 
+    @media (max-width: 950px) {
+      margin-top: 50px;
+      font-size: 40px;
+      line-height: 44px;
+    }
+
+    @media (max-width: 750px) {
+      font-size: 30px;
+      line-height: 34px;
+    }
   }
 
   &__main {
     display: flex;
     justify-content: space-between;
+
+    @media (max-width: 750px) {
+      display: flex;
+      flex-direction: column;
+
+      text-align: center;
+    }
   }
 
   &__img {
     width: 35%;
+
+    @media (max-width: 750px) {
+      width: 100%;
+    }
   }
 
   &__info {
     width: 60%;
     padding-right: 5px;
     box-sizing: border-box;
+
+    @media (max-width: 750px) {
+      width: 100%;
+    }
   }
 
   &__info-title {
@@ -51,5 +80,15 @@
     text-decoration: none;
     color: #ef5b4c;
     font-weight: bold;
+
+    transition: color 0.5s;
+  }
+
+  &__link:hover {
+    color:  #d24335
+  }
+
+  &__link:active {
+    color: #007bff;
   }
 }

@@ -11,25 +11,27 @@ import './Users.scss';
 // const href = 'https://frontend-test-assignment-api.abz.agency/api/v1/users?page=1&count=5'
 
 export const Users = () => {
+  const width = window.innerWidth;
+  const usersToLoad = width > 400 ? 6 : 3;
   const dispatch = useDispatch()
   const users = useSelector(getUsers)
   const [loadetUsers, setLoadetUsers] = useState(0);
   const [allUsersLoad, setAllUsersLoad] = useState(false)
 
   const memoGetData = useCallback(
-    async function getData(usersToLoad) {
-      const result = await loadUsers(usersToLoad)
+    async function getData() {
+      const result = await loadUsers(loadetUsers + usersToLoad)
 
       if (loadetUsers <= result.total_users) {
         dispatch(setUsers(result.users))
       }
 
-      setLoadetUsers(loadetUsers + 6)
+      setLoadetUsers(loadetUsers + usersToLoad)
 
-      if (loadetUsers + 6 >= result.total_users) {
+      if (loadetUsers + usersToLoad >= result.total_users) {
         setAllUsersLoad(true)
       }
-    }, [dispatch, loadetUsers]
+    }, [dispatch, loadetUsers, usersToLoad]
   )
 
   useEffect(() => {
@@ -58,7 +60,7 @@ export const Users = () => {
           <button
             className="users__btn"
             type="button"
-            onClick={() => memoGetData(loadetUsers + 6)}
+            onClick={() => memoGetData()}
           >
             Show more
           </button>

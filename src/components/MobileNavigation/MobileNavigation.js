@@ -12,14 +12,17 @@ export const MobileNavigation = () => {
   return (
     <section
       className="mobile-navigation"
-      style={navigationStatus ? { transform: "translateX(0)", backgroundColor: "rgba(0, 0, 0, .5)" } : { transform: "translateX(-300px)" }}
+      style={navigationStatus ? { transform: "translateX(0)", backgroundColor: "rgba(0, 0, 0, .5)" } : { transform: "translateX(-100%)" }}
       onClick={(e) => {
         if (e.target.tagName === 'SECTION') {
-          dispatch(navigationToggler())
+          dispatch(navigationToggler(false))
         }
       }}
     >
       <ul className="mobile-navigation__list">
+        <div className="header__logo header__logo--mobile">
+          <img alt="logo" className="header__logo-img" src='/images/logo.svg' />
+        </div>
         <div className="mobile-navigation__section">
           <li className="mobile-navigation__item">
             <a className="mobile-navigation__link" href="#registration">About me</a>

@@ -169,8 +169,13 @@ export const Registration = () => {
             <p className="registration__text">Select our position</p>
             {positions.map(position => (
               <label className="registration__text" key={position.id}>
-                <input name="position" type="radio"/>
-              {position.name}
+                <input
+                  name="position"
+                  type="radio"
+                  className="registration__input-radio"
+                  id={`radio${position.id}`}
+                />
+              <label for={`radio${position.id}`} className="registration__input-label">{position.name}</label>
               </label>
             ))}
             <p
