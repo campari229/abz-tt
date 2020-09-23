@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/abz-tt/static/css/main.10762867.chunk.css",
+    "main.js": "/abz-tt/static/js/main.a90bf71b.chunk.js",
+    "main.js.map": "/abz-tt/static/js/main.a90bf71b.chunk.js.map",
+    "runtime-main.js": "/abz-tt/static/js/runtime-main.b1e753c0.js",
+    "runtime-main.js.map": "/abz-tt/static/js/runtime-main.b1e753c0.js.map",
+    "static/js/2.2e1e5a63.chunk.js": "/abz-tt/static/js/2.2e1e5a63.chunk.js",
+    "static/js/2.2e1e5a63.chunk.js.map": "/abz-tt/static/js/2.2e1e5a63.chunk.js.map",
+    "index.html": "/abz-tt/index.html",
+    "precache-manifest.29fdb216ee82b7c52ff09f9431c7a33b.js": "/abz-tt/precache-manifest.29fdb216ee82b7c52ff09f9431c7a33b.js",
+    "service-worker.js": "/abz-tt/service-worker.js",
+    "static/css/main.10762867.chunk.css.map": "/abz-tt/static/css/main.10762867.chunk.css.map",
+    "static/js/2.2e1e5a63.chunk.js.LICENSE.txt": "/abz-tt/static/js/2.2e1e5a63.chunk.js.LICENSE.txt",
+    "static/media/Footer.scss": "/abz-tt/static/media/OpenSans-Regular.3ed9575d.ttf",
+    "static/media/HeadInfo.scss": "/abz-tt/static/media/banner-photo.f5443d74.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b1e753c0.js",
+    "static/js/2.2e1e5a63.chunk.js",
+    "static/css/main.10762867.chunk.css",
+    "static/js/main.a90bf71b.chunk.js"
+  ]
+}
