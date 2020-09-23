@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/abz-tt/static/css/main.10762867.chunk.css",
-    "main.js": "/abz-tt/static/js/main.3a7251bd.chunk.js",
-    "main.js.map": "/abz-tt/static/js/main.3a7251bd.chunk.js.map",
+    "main.css": "/abz-tt/static/css/main.4e2f4151.chunk.css",
+    "main.js": "/abz-tt/static/js/main.53907914.chunk.js",
+    "main.js.map": "/abz-tt/static/js/main.53907914.chunk.js.map",
     "runtime-main.js": "/abz-tt/static/js/runtime-main.b1e753c0.js",
     "runtime-main.js.map": "/abz-tt/static/js/runtime-main.b1e753c0.js.map",
     "static/js/2.2e1e5a63.chunk.js": "/abz-tt/static/js/2.2e1e5a63.chunk.js",
     "static/js/2.2e1e5a63.chunk.js.map": "/abz-tt/static/js/2.2e1e5a63.chunk.js.map",
     "index.html": "/abz-tt/index.html",
-    "precache-manifest.05f56ae1752eb98e3c3bbb59c5eabb8e.js": "/abz-tt/precache-manifest.05f56ae1752eb98e3c3bbb59c5eabb8e.js",
+    "precache-manifest.5b7a2c568117b962d27de589cb9a3901.js": "/abz-tt/precache-manifest.5b7a2c568117b962d27de589cb9a3901.js",
     "service-worker.js": "/abz-tt/service-worker.js",
-    "static/css/main.10762867.chunk.css.map": "/abz-tt/static/css/main.10762867.chunk.css.map",
+    "static/css/main.4e2f4151.chunk.css.map": "/abz-tt/static/css/main.4e2f4151.chunk.css.map",
     "static/js/2.2e1e5a63.chunk.js.LICENSE.txt": "/abz-tt/static/js/2.2e1e5a63.chunk.js.LICENSE.txt",
     "static/media/Footer.scss": "/abz-tt/static/media/OpenSans-Regular.3ed9575d.ttf",
     "static/media/HeadInfo.scss": "/abz-tt/static/media/banner-photo.f5443d74.jpg"
@@ -18,7 +18,7 @@
   "entrypoints": [
     "static/js/runtime-main.b1e753c0.js",
     "static/js/2.2e1e5a63.chunk.js",
-    "static/css/main.10762867.chunk.css",
-    "static/js/main.3a7251bd.chunk.js"
+    "static/css/main.4e2f4151.chunk.css",
+    "static/js/main.53907914.chunk.js"
   ]
 }
