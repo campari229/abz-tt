@@ -39,9 +39,6 @@ export const Users = () => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch])
 
-  console.log(loadetUsers)
-  console.log(users)
-
   return (
     <section className="users">
       <h3 className="users__title">Our cheerful users</h3>

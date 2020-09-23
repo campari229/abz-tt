@@ -12,7 +12,7 @@ export const Acquaintance = () => {
         <img
           className="acquaintance__img"
           alt="man with laptop"
-          src='/images/man-laptop-v1.svg'
+          src='images/man-laptop-v1.svg'
         />
         <div className="acquaintance__info">
           <h4 className="acquaintance__info-title">I am cool frontend developer</h4>

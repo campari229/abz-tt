@@ -11,29 +11,29 @@ export const Header = () => {
   return (
     <section className="header" id="header">
       <div className="header__logo">
-        <img alt="logo" className="header__logo-img" src='/images/logo.svg' />
+        <img alt="logo" className="header__logo-img" src='images/logo.svg' />
       </div>
       <div className="header__navigation navigation">
         <ul className="navigation__list">
           <li className="navigation__item">
-            <a className="navigation__link" href="#header">About me</a>
+            <a className="navigation__link" href="#registration">About me</a>
           </li>
           <li className="navigation__item">
-            <a className="navigation__link" href="#header">Realationships</a>
+            <a className="navigation__link" href="#registration">Realationships</a>
           </li>
           <li className="navigation__item">
-            <a className="navigation__link" href="#header">Requirements</a>
+            <a className="navigation__link" href="#registration">Requirements</a>
           </li>
           <li className="navigation__item">
-            <a className="navigation__link" href="#header">Users</a>
+            <a className="navigation__link" href="#registration">Users</a>
           </li>
           <li className="navigation__item">
-            <a className="navigation__link" href="#header">Sign Up</a>
+            <a className="navigation__link" href="#registration">Sign Up</a>
           </li>
         </ul>
       </div>
       <button className="header__burger-menu" onClick={() => dispatch(navigationToggler(true))}>
-        <img src='/images/menu icon.svg' alt="burger" />
+        <img src='images/menu icon.svg' alt="burger" />
       </button>
     </section>
   )
